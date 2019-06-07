@@ -39,9 +39,16 @@ export function getSingleSelector (element, options = {}) {
   //   selector:  ${selector}
   //   optimized: ${optimized}
   // `)
+  let selectorTarget;
+  let optimizedSelectorTarget;
 
-  let selectorTarget = global.document.querySelector(selector);
-  let optimizedSelectorTarget = global.document.querySelector(optimized);
+  if (global.document === true) {
+    selectorTarget = document.querySelector(selector);
+    optimizedSelectorTarget = document.querySelector(optimized);
+  } else {
+    selectorTarget = global.document.querySelector(selector);
+    optimizedSelectorTarget = global.document.querySelector(optimized);
+  }
 
   if (globalModified) {
     delete global.document
