@@ -44,6 +44,7 @@
     "prepare": "npm run build",
     "check": "npm outdated -depth 0",
     "dev": "NODE_ENV=development node build",
+		"build": "",
     "example": "open-url 'http:/localhost:8080/example' && http-server"
   },
   "dependencies": {}
